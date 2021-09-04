@@ -11,6 +11,7 @@ const Anime = ({ name, handleNameChange, handleKeyDown }) => {
         id="search"
         name="search"
         placeholder="death  Note"
+        autoComplete="off"
         value={name}
         onChange={handleNameChange}
         onKeyDown={handleKeyDown}

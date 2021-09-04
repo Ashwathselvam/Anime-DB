@@ -1,10 +1,26 @@
 import React from "react";
-
+import Loader from "react-loader-spinner";
 const AnimeList = ({ data, isLoading }) => {
-  if (isLoading) return <h1>Loading....</h1>;
+  if (isLoading) return (
+    <div className="loader">
+      <Loader
+        type="Rings"
+        color="#00BFFF"
+        height={300}
+        width={300}
+      />
+    </div>
+  );
+  if (!isLoading && data === undefined) {
+    return (
+      <div className="result">
+        <h1>Result doesn't exist</h1>
+      </div>
+    );
+  }
   return (
     <div className="card-main">
-      {data.map((datas) => {
+      {data?.map((datas) => {
         const { image_url, title, episodes, url, mal_id } = datas;
         return (
           <div key={mal_id} className="card">
