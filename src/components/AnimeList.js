@@ -23,12 +23,12 @@ const AnimeList = ({ data, isLoading }) => {
       {data?.map((datas) => {
         const { image_url, title, episodes, url, mal_id } = datas;
         return (
-          <div key={mal_id} className="card">
-            <div class="imgBx">
-              <a href={url} target="_blank" rel="noreferrer">
-                <img src={image_url} alt={title} />
-              </a>
-            </div>
+            <div key={mal_id} className="card">
+              <div class="imgBx">
+                <a href={url} target="_blank" rel="noreferrer">
+                  <img src={image_url} alt={title} />
+                </a>
+              </div>
             <div className="container">
               <h4>
                 <b>{title}</b>

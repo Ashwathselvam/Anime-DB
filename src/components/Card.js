@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Anime from "./Anime";
 import AnimeList from "./AnimeList";
 
@@ -16,7 +16,7 @@ const Card = () => {
       try {
         setLoad(true);
         const response = await fetch(
-          `https://api.jikan.moe/v3/search/anime?q=${name}&order_by=title&sort=asc&limit=10`
+          `https://api.jikan.moe/v3/search/anime?q=${name||"full"}&order_by=title&sort=asc&limit=10`
         );
         const data = await response.json();
         setData(data.results);
@@ -27,6 +27,9 @@ const Card = () => {
       }
     }
   };
+  useEffect(()=>{
+    fetchAnime({keyCode:13});
+  },[])
   return (
     <div style={{ width: "100%",
     position:'relative',

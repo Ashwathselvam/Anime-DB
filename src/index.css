@@ -120,6 +120,7 @@ input[type="text"]:focus {
   justify-content: center;
   height: 100%;
 }
+
  @media only screen and (max-width :600px){
    .card{
 flex: 0 0 100%;
